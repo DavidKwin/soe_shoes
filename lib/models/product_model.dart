@@ -1,7 +1,6 @@
 class ProductModel {
   final int id;
   final double price;
-
   final String title, description, image, brandImage;
   final bool isFavorite;
 

@@ -89,6 +89,16 @@ List<ProductModel> popularProducts = [
 
 
 List<ProductModel> newArrivalProducts = [
+
+  ProductModel(
+    id: 9,
+    price: 39,
+    title: "Jordan Air Max 90",
+    image: "assets/images/image4.png",
+    brandImage: 'assets/images/jordan_brand.png',
+    description:
+    "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
+  ),
   ProductModel(
     id: 9,
     price: 39,
@@ -96,15 +106,6 @@ List<ProductModel> newArrivalProducts = [
     image: "assets/images/image2.png",
     brandImage: 'assets/images/puma_brand.png',
     isFavorite: true,
-    description:
-    "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
-  ),
-  ProductModel(
-    id: 9,
-    price: 39,
-    title: "Jordan Air Max 90",
-    image: "assets/images/image4.png",
-    brandImage: 'assets/images/jordan_brand.png',
     description:
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
