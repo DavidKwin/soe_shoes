@@ -5,6 +5,7 @@ import 'package:soe_shoes/widgets/common_widget.dart';
 
 import '../../../../models/product_model.dart';
 import '../../../../widgets/product_info_widget.dart';
+import '../../../product/product_detail_screen.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -22,12 +23,18 @@ class FavoritePage extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           ProductModel product = favoriteProducts[index];
-          return FavoriteProductWidget(product: product);
+          return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ProductDetailScreen(product: product)));
+              },
+              child: FavoriteProductWidget(product: product));
         },
         itemCount: favoriteProducts.length,
       ),
     );
   }
 }
-
-

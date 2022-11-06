@@ -12,8 +12,8 @@ class UserProfileInfoWidget extends StatelessWidget {
       child: Column(
         children: [
           ClipOval(
-            child: Image.network(
-              "https://randomuser.me/api/portraits/men/52.jpg",
+            child: Image.asset(
+              "assets/images/user_profile.png",
               height: 80,
               width: 80,
             ),
