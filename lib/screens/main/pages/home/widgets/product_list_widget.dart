@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../data/data.dart';
 import '../../../../../models/product_model.dart';
 import '../../../../../widgets/product_image_widget.dart';
+import '../../../../../widgets/product_info_widget.dart';
 
 class ProductListWidget extends StatelessWidget {
   ProductListWidget({Key? key, required this.title, required this.products})
@@ -40,20 +41,8 @@ class ProductListWidget extends StatelessWidget {
                         height: 120,
                         width: 120,
                         child: ProductImageWidget(product: product)),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      product.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text('\$ ${product.price}')
+
+                   ProductInfoWidget(product: product)
                   ],
                 ),
               );
@@ -64,3 +53,5 @@ class ProductListWidget extends StatelessWidget {
     );
   }
 }
+
+
