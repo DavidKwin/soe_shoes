@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soe_shoes/data/data.dart';
+import 'package:soe_shoes/screens/main/pages/favorite/widgets/favorite_product_widget.dart';
 import 'package:soe_shoes/widgets/common_widget.dart';
 
 import '../../../../models/product_model.dart';
@@ -20,18 +21,13 @@ class FavoritePage extends StatelessWidget {
           childAspectRatio: 0.8,
         ),
         itemBuilder: (context, index) {
-          // 0,1,2,3
           ProductModel product = favoriteProducts[index];
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Flexible(child: ProductImageWidget(product: product)),
-              ProductInfoWidget(product: product)
-            ],
-          );
+          return FavoriteProductWidget(product: product);
         },
         itemCount: favoriteProducts.length,
       ),
     );
   }
 }
+
+
