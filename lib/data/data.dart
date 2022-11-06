@@ -14,6 +14,7 @@ List<ProductModel> products = [
     price: 239.80,
     title: "Nike Air Max 90",
     image: "assets/images/image.png",
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     brandImage: 'assets/images/nike_brand.png',
     description:
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
@@ -21,6 +22,7 @@ List<ProductModel> products = [
   ProductModel(
     id: 4,
     price: 85.80,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
     image: "assets/images/image1.png",
     brandImage: 'assets/images/adidas_brand.png',
@@ -30,6 +32,7 @@ List<ProductModel> products = [
   ProductModel(
     id: 9,
     price: 39,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Puma Air Max 90",
     image: "assets/images/image2.png",
     brandImage: 'assets/images/puma_brand.png',
@@ -39,6 +42,7 @@ List<ProductModel> products = [
   ProductModel(
     id: 9,
     price: 39,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Jordan Air Max 90",
     image: "assets/images/image4.png",
     brandImage: 'assets/images/jordan_brand.png',
@@ -51,6 +55,7 @@ List<ProductModel> popularProducts = [
   ProductModel(
     id: 9,
     price: 39,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Jordan Air Max 90",
     image: "assets/images/image4.png",
     brandImage: 'assets/images/jordan_brand.png',
@@ -60,6 +65,7 @@ List<ProductModel> popularProducts = [
   ProductModel(
     id: 1,
     price: 239.80,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Nike Air Max 90",
     image: "assets/images/image.png",
     brandImage: 'assets/images/nike_brand.png',
@@ -70,6 +76,7 @@ List<ProductModel> popularProducts = [
   ProductModel(
     id: 9,
     price: 39,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Puma Air Max 90",
     image: "assets/images/image2.png",
     brandImage: 'assets/images/puma_brand.png',
@@ -79,6 +86,7 @@ List<ProductModel> popularProducts = [
   ProductModel(
     id: 4,
     price: 85.80,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
     image: "assets/images/image1.png",
     brandImage: 'assets/images/adidas_brand.png',
@@ -96,6 +104,7 @@ List<ProductModel> newArrivalProducts = [
     title: "Jordan Air Max 90",
     image: "assets/images/image4.png",
     brandImage: 'assets/images/jordan_brand.png',
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     description:
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
@@ -103,6 +112,7 @@ List<ProductModel> newArrivalProducts = [
     id: 9,
     price: 39,
     title: "Puma Air Max 90",
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     image: "assets/images/image2.png",
     brandImage: 'assets/images/puma_brand.png',
     isFavorite: true,
@@ -113,6 +123,7 @@ List<ProductModel> newArrivalProducts = [
     id: 1,
     price: 239.80,
     title: "Nike Air Max 90",
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     image: "assets/images/image.png",
     brandImage: 'assets/images/nike_brand.png',
     isFavorite: true,
@@ -123,6 +134,7 @@ List<ProductModel> newArrivalProducts = [
   ProductModel(
     id: 4,
     price: 85.80,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
     image: "assets/images/image1.png",
     brandImage: 'assets/images/adidas_brand.png',
@@ -137,6 +149,7 @@ List<ProductModel> favoriteProducts = [
     id: 1,
     price: 239.80,
     isFavorite: true,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Nike Air Max 90",
     image: "assets/images/image.png",
     brandImage: 'assets/images/nike_brand.png',
@@ -147,6 +160,7 @@ List<ProductModel> favoriteProducts = [
     id: 4,
     price: 85.80,
     isFavorite: true,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
     image: "assets/images/image1.png",
     brandImage: 'assets/images/adidas_brand.png',
@@ -157,6 +171,7 @@ List<ProductModel> favoriteProducts = [
     id: 9,
     price: 39,
     isFavorite: true,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Puma Air Max 90",
     image: "assets/images/image2.png",
     brandImage: 'assets/images/puma_brand.png',
@@ -167,6 +182,7 @@ List<ProductModel> favoriteProducts = [
     id: 9,
     price: 39,
     isFavorite: true,
+    sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Jordan Air Max 90",
     image: "assets/images/image4.png",
     brandImage: 'assets/images/jordan_brand.png',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soe_shoes/screens/product/product_detail_screen.dart';
 
 import '../../../../../data/data.dart';
 import '../../../../../models/product_model.dart';
@@ -10,7 +11,7 @@ class ProductListWidget extends StatelessWidget {
       : super(key: key);
 
   String title;
-  List<ProductModel> products;
+  List<ProductModel> products; //popular, new arrival
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +31,18 @@ class ProductListWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
                 children: List.generate(products.length, (index) {
-              ProductModel product = popularProducts[index]; // 0,1,2,3,  4 -1
-              return Container(
-                margin: EdgeInsets.only(
-                    left: 16, right: index == products.length - 1 ? 16 : 0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                        height: 120,
-                        width: 120,
-                        child: ProductImageWidget(product: product)),
-
-                   ProductInfoWidget(product: product)
-                  ],
+              ProductModel product = products[index]; // 0,1,2,3,  4 -1
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ProductDetailScreen(product: product)));
+                },
+                child: HomeProductWidget(
+                  product: product,
+                  rightPadding: index == (products.length - 1) ? 16 : 0,
                 ),
               );
             })),
@@ -54,4 +53,30 @@ class ProductListWidget extends StatelessWidget {
   }
 }
 
+class HomeProductWidget extends StatelessWidget {
+  const HomeProductWidget({
+    Key? key,
+    required this.product,
+    required this.rightPadding,
+  }) : super(key: key);
 
+  final ProductModel product;
+  final double rightPadding;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 136,
+      margin: EdgeInsets.only(left: 16, right: rightPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+              height: 120,
+              child: ProductImageWidget(product: product)),
+          ProductInfoWidget(product: product)
+        ],
+      ),
+    );
+  }
+}
