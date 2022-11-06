@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:soe_shoes/screens/main/pages/cart/cart_page.dart';
 import 'package:soe_shoes/screens/main/pages/favorite/favorite_page.dart';
 import 'package:soe_shoes/screens/main/pages/home/home_page.dart';
-import 'package:soe_shoes/screens/main/pages/person_page.dart';
+import 'package:soe_shoes/screens/main/pages/profile/person_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
