@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:soe_shoes/screen/main/page/cart_page.dart';
+import 'package:soe_shoes/screen/main/page/favorite_page.dart';
+import 'package:soe_shoes/screen/main/page/home/home_page.dart';
+import 'package:soe_shoes/screen/main/page/parson_page.dart';
 
-class Mainscreen extends StatefulWidget {
-  const Mainscreen({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<Mainscreen> createState() => _MainscreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainscreenState extends State<Mainscreen> {
+class _MainScreenState extends State<MainScreen> {
 
   int _selectedIndex = 0;
-  PageController controller= PageController(initialPage: 0);
+  PageController pageController= PageController(initialPage: 0);
  @override
   void initState() {
-    controller.addListener(() { });
+    pageController.addListener(() {
+      setState(() {
+        _selectedIndex = pageController.page!.floor();
+      });
+    });
     super.initState();
   }
 
@@ -21,28 +29,24 @@ class _MainscreenState extends State<Mainscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Shooping"),
+        backgroundColor: Colors.white,
+        title: const Text("Shooping",
+          style: TextStyle(color: Colors.redAccent),),
+        elevation: 0,
+        actions: [TextButton(onPressed: (){}, child: const Icon(Icons.notifications,color: Colors.black,))],
       ),
       body: PageView(
-        controller: controller,
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
         children: [
-          Container(
-            color: Colors.red,
-            child: Icon(Icons.home),
-          ),
-          Container(
-            color: Colors.yellow,
-            child: Icon(Icons.shopping_cart_sharp),
-          ),
-          Container(
-            color: Colors.green,
-            child: Icon(Icons.favorite),
-          ),
+          HomePage(),
+          CartPage(),
+          FavoritePage(),
+          ParsonPage(),
 
-          Container(
-            color: Colors.blue,
-            child: Icon(Icons.person),
-          )
+
+
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -50,20 +54,28 @@ class _MainscreenState extends State<Mainscreen> {
         onTap: (int index) {
           setState(() {
             _selectedIndex = index;
-            controller.jumpToPage(index);
+            pageController.jumpToPage(index);
+            setState(() {
+              pageController.animateToPage(index,
+                  duration: const Duration(microseconds: 350), curve: Curves.easeIn);
+            });
+
+
 
           });
         },
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart_rounded), label: "cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "home")
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "person")
         ],
+
       ),
+
     );
   }
 }

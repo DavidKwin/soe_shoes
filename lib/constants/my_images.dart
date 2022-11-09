@@ -1,0 +1,1 @@
+const promotionBanner = 'assets/images/promotion_banner.png';
