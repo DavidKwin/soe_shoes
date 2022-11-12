@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/product_model.dart';
@@ -41,52 +42,63 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               decoration: const BoxDecoration(
                   color: Color(0xFFEDEDED),
                   borderRadius: BorderRadius.all(Radius.circular(16))),
-              child: Image.asset(
-                widget.product.image,
-                height: 300,
+              child: Hero(
+                tag: widget.product.id,
+                child: Image.asset(
+                  widget.product.image,
+                  height: 300,
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.product.title,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 24),
-                      ),
-                      SizedBox(
-                        height: 2,
-                      ),
-                      Text(
-                        "\$ ${widget.product.price}",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                  Image.asset(
-                    widget.product.brandImage,
-                    height: 54,
-                    width: 54,
-                  ),
-                ],
+            FadeInUp(
+              duration: Duration(milliseconds: 800),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.product.title,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 24),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          "\$ ${widget.product.price}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 20),
+                        ),
+                      ],
+                    ),
+                    Image.asset(
+                      widget.product.brandImage,
+                      height: 54,
+                      width: 54,
+                    ),
+                  ],
+                ),
               ),
             ),
-            ProductSizedWidget(
-              sizes: widget.product.sizes,
-              selectedSizeIndex: selectedSizeIndex,
-              onTapSize: (index) {
-                setState(() {
-                  selectedSizeIndex = index;
-                });
-              },
+            FadeInUp(
+              duration: Duration(milliseconds: 800),
+              child: ProductSizedWidget(
+                sizes: widget.product.sizes,
+                selectedSizeIndex: selectedSizeIndex,
+                onTapSize: (index) {
+                  setState(() {
+                    selectedSizeIndex = index;
+                  });
+                },
+              ),
             ),
-            DescriptionWidget(product: widget.product)
+            FadeInUp(
+                duration: Duration(milliseconds: 800),
+                child: DescriptionWidget(product: widget.product))
           ],
         ),
       ),
@@ -128,11 +140,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 }
 
 class ProductSizedWidget extends StatelessWidget {
-  const ProductSizedWidget(
-      {Key? key,
-      required this.sizes,
-      required this.selectedSizeIndex,
-      required this.onTapSize})
+  const ProductSizedWidget({Key? key,
+    required this.sizes,
+    required this.selectedSizeIndex,
+    required this.onTapSize})
       : super(key: key);
 
   final List<int> sizes;

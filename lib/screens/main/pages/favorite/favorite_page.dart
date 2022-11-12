@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:soe_shoes/data/data.dart';
 import 'package:soe_shoes/screens/main/pages/favorite/widgets/favorite_product_widget.dart';

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:soe_shoes/screens/main/pages/cart/cart_page.dart';
 import 'package:soe_shoes/screens/main/pages/favorite/favorite_page.dart';
 import 'package:soe_shoes/screens/main/pages/home/home_page.dart';
 import 'package:soe_shoes/screens/main/pages/profile/person_page.dart';
+
+import '../../constants/my_images.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -39,10 +42,7 @@ class _MainScreenState extends State<MainScreen> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
+            icon:SvgPicture.asset(notificationIcon, color: Colors.black),
             onPressed: () {},
           )
         ],
@@ -66,13 +66,19 @@ class _MainScreenState extends State<MainScreen> {
         },
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_rounded), label: 'Cart'),
+              icon: SvgPicture.asset(homeIcon),
+              label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favorite'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+              icon: SvgPicture.asset(cartIcon),
+              label: 'Cart'),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(favoriteIcon),
+              label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(profileIcon),
+              label: 'Profile'),
         ],
       ),
     );
