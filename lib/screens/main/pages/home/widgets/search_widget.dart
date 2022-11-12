@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../../constants/my_images.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({
@@ -7,14 +10,22 @@ class SearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 16),
-      child:  TextField(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      child: TextField(
         autofocus: false,
         decoration: InputDecoration(
             hintText: "Search",
-            prefixIcon: Icon(Icons.search),
-            border: OutlineInputBorder(
+
+            contentPadding: EdgeInsets.symmetric(vertical: 16),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: SvgPicture.asset(
+                searchIcon,
+                color: Colors.black,
+              ),
+            ),
+            border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(32),
                 ),

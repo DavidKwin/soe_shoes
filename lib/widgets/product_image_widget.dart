@@ -19,7 +19,7 @@ class ProductImageWidget extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(product.image),
+          Hero(tag: product.id, child: Image.asset(product.image)),
           Positioned(
             right: 8,
             top: 8,

@@ -20,7 +20,7 @@ List<ProductModel> products = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 4,
+    id: 2,
     price: 85.80,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
@@ -30,7 +30,7 @@ List<ProductModel> products = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 9,
+    id: 3,
     price: 39,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Puma Air Max 90",
@@ -40,7 +40,7 @@ List<ProductModel> products = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 9,
+    id: 4,
     price: 39,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Jordan Air Max 90",
@@ -53,7 +53,7 @@ List<ProductModel> products = [
 
 List<ProductModel> popularProducts = [
   ProductModel(
-    id: 9,
+    id: 5,
     price: 39,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Jordan Air Max 90",
@@ -63,7 +63,7 @@ List<ProductModel> popularProducts = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 1,
+    id: 6,
     price: 239.80,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Nike Air Max 90",
@@ -74,7 +74,7 @@ List<ProductModel> popularProducts = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 9,
+    id: 7,
     price: 39,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Puma Air Max 90",
@@ -84,7 +84,7 @@ List<ProductModel> popularProducts = [
         "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 4,
+    id: 8,
     price: 85.80,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
@@ -109,7 +109,7 @@ List<ProductModel> newArrivalProducts = [
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 9,
+    id: 10,
     price: 39,
     title: "Puma Air Max 90",
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
@@ -120,7 +120,7 @@ List<ProductModel> newArrivalProducts = [
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 1,
+    id: 11,
     price: 239.80,
     title: "Nike Air Max 90",
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
@@ -132,7 +132,7 @@ List<ProductModel> newArrivalProducts = [
   ),
 
   ProductModel(
-    id: 4,
+    id: 12,
     price: 85.80,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
     title: "Adidas Air Max 90",
@@ -146,7 +146,7 @@ List<ProductModel> newArrivalProducts = [
 
 List<ProductModel> favoriteProducts = [
   ProductModel(
-    id: 1,
+    id: 13,
     price: 239.80,
     isFavorite: true,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
@@ -157,7 +157,7 @@ List<ProductModel> favoriteProducts = [
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 4,
+    id: 14,
     price: 85.80,
     isFavorite: true,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
@@ -179,7 +179,7 @@ List<ProductModel> favoriteProducts = [
     "A pillar of sneaker culture, the Nike Air Max 90 remains one of the most significant designs since the brand’s founding. And while its OG colorways are some of the most significant.",
   ),
   ProductModel(
-    id: 9,
+    id: 15,
     price: 39,
     isFavorite: true,
     sizes:[34,35,36,37,38,39,40,41,42,43,44] ,
