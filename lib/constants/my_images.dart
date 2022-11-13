@@ -9,3 +9,4 @@ const homeIcon = 'assets/icons/home_icon.svg';
 const cartIcon = 'assets/icons/cart_icon.svg';
 const favoriteIcon = 'assets/icons/heart_icon.svg';
 const profileIcon  = 'assets/icons/profile_icon.svg';
+const appLogo = 'assets/logo.png';

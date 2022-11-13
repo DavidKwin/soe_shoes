@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:soe_shoes/screens/main/main_screen.dart';
 
 import 'constants/my_font.dart';
+import 'screens/splash/splash_screen.dart';
 import 'theme/my_theme.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       darkTheme: darkTheme,
       theme: lightTheme,
-      home: const MainScreen(),
+      home: const SplashScreen(),
     );
   }
 }
