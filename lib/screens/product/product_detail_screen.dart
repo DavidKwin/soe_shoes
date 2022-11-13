@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 
+import '../../constants/my_style.dart';
 import '../../models/product_model.dart';
 
 class ProductDetailScreen extends StatefulWidget {
@@ -22,14 +24,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: ElevatedButton(
-          child: const Text('Checkout'),
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              minimumSize: const Size(double.infinity, 56), // width, height
-              foregroundColor: Colors.white,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32)))),
+          child: const Text('Add To Cart'),
+          onPressed: () {
+            QuickAlert.show(
+              context: context,
+              type: QuickAlertType.success,
+              text: 'Add To Cart Completed Successfully!',
+            );
+          },
         ),
       ),
       body: SingleChildScrollView(
@@ -39,9 +41,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             Container(
               width: double.infinity,
               margin: const EdgeInsets.all(16),
-              decoration: const BoxDecoration(
-                  color: Color(0xFFEDEDED),
-                  borderRadius: BorderRadius.all(Radius.circular(16))),
+              decoration: greyBoxDecoration,
               child: Hero(
                 tag: widget.product.id,
                 child: Image.asset(
@@ -107,12 +107,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   _buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back_ios,
-          color: Colors.black,
         ),
         onPressed: () {
           Navigator.pop(context);
@@ -132,7 +130,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             onPressed: () {},
             icon: Icon(
               Icons.share,
-              color: Colors.black,
             )),
       ],
     );
@@ -140,10 +137,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 }
 
 class ProductSizedWidget extends StatelessWidget {
-  const ProductSizedWidget({Key? key,
-    required this.sizes,
-    required this.selectedSizeIndex,
-    required this.onTapSize})
+  const ProductSizedWidget(
+      {Key? key,
+      required this.sizes,
+      required this.selectedSizeIndex,
+      required this.onTapSize})
       : super(key: key);
 
   final List<int> sizes;
@@ -157,14 +155,11 @@ class ProductSizedWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               'Size',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.subtitle1!,
             ),
           ),
           SingleChildScrollView(
@@ -227,12 +222,9 @@ class DescriptionWidget extends StatelessWidget {
         children: [
           Text(
             "Desription",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.subtitle1!,
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(product.description),

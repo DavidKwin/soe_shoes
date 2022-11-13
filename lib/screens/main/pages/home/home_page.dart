@@ -11,23 +11,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SearchWidget(),
-            PromotionBannerWidget(),
-            TopBrandWidget(),
-            ProductListWidget(title: 'Popular', products: popularProducts,),
-            Divider(),
-            ProductListWidget(title: 'New Arrival', products: newArrivalProducts,),
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SearchWidget(),
+          PromotionBannerWidget(),
+          TopBrandWidget(),
+          ProductListWidget(
+            title: 'Popular',
+            products: popularProducts,
+          ),
+          Divider(),
+          ProductListWidget(
+            title: 'New Arrival',
+            products: newArrivalProducts,
+          ),
+        ],
       ),
     );
   }
 }
-
-
