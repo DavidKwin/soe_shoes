@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:soe_shoes/screens/login/login_screen.dart';
 
 class ProfileMenuWidget extends StatelessWidget {
   const ProfileMenuWidget({
@@ -54,10 +55,17 @@ class ProfileMenuWidget extends StatelessWidget {
             title: const Text("Logout"),
             onTap: () {
               QuickAlert.show(
-                context: context,
-                type: QuickAlertType.confirm,
-                text: "Do you want to logout",
-              );
+                  context: context,
+                  type: QuickAlertType.confirm,
+                  text: "Do you want to logout",
+                  onConfirmBtnTap: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                        (Route<dynamic> route) => false);
+                  });
             },
           ),
         ],
