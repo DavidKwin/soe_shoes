@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 
 class ProfileMenuWidget extends StatelessWidget {
   const ProfileMenuWidget({
@@ -51,7 +52,13 @@ class ProfileMenuWidget extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text("Logout"),
-            onTap: () {},
+            onTap: () {
+              QuickAlert.show(
+                context: context,
+                type: QuickAlertType.confirm,
+                text: "Do you want to logout",
+              );
+            },
           ),
         ],
       ),

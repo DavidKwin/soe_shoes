@@ -24,7 +24,16 @@ class ProductListWidget extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16, bottom: 16, right: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text(title), Text('See All')],
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.subtitle1!,
+                ),
+                Text(
+                  'See All',
+                  style: Theme.of(context).textTheme.caption!.copyWith(color: Colors.blueAccent),
+                )
+              ],
             ),
           ),
           SingleChildScrollView(
@@ -71,9 +80,7 @@ class HomeProductWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-              height: 120,
-              child: ProductImageWidget(product: product)),
+          SizedBox(height: 120, child: ProductImageWidget(product: product)),
           ProductInfoWidget(product: product)
         ],
       ),

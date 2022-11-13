@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:soe_shoes/screens/main/pages/cart/cart_page.dart';
 import 'package:soe_shoes/screens/main/pages/favorite/favorite_page.dart';
 import 'package:soe_shoes/screens/main/pages/home/home_page.dart';
-import 'package:soe_shoes/screens/main/pages/profile/person_page.dart';
+import 'package:soe_shoes/screens/main/pages/profile/profile_page.dart';
 
 import '../../constants/my_images.dart';
 
@@ -32,17 +32,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text(
           "Soe Shoe",
-          style: TextStyle(color: Colors.black),
         ),
         elevation: 0,
         actions: [
           IconButton(
-            icon:SvgPicture.asset(notificationIcon, color: Colors.black),
+            icon: SvgPicture.asset(notificationIcon, color: Theme.of(context).colorScheme.onPrimary),
             onPressed: () {},
           )
         ],
@@ -50,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
-        children: const [HomePage(), CartPage(), FavoritePage(), PersonPage()],
+        children: const [HomePage(), CartPage(), FavoritePage(), ProfilePage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -59,25 +56,35 @@ class _MainScreenState extends State<MainScreen> {
             _selectedIndex = index;
             pageController.animateToPage(index,
                 duration: const Duration(
-                  milliseconds: 350,
+                  milliseconds: 500,
                 ),
                 curve: Curves.easeIn);
           });
         },
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(homeIcon),
+              icon: SvgPicture.asset(
+                homeIcon,
+                color: _selectedIndex == 0 ? Colors.black : Colors.grey,
+              ),
               label: 'Home'),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(cartIcon),
+              icon: SvgPicture.asset(
+                cartIcon,
+                color: _selectedIndex == 1 ? Colors.black : Colors.grey,
+              ),
               label: 'Cart'),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(favoriteIcon),
+              icon: SvgPicture.asset(
+                favoriteIcon,
+                color: _selectedIndex == 2 ? Colors.black : Colors.grey,
+              ),
               label: 'Favorite'),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(profileIcon),
+              icon: SvgPicture.asset(
+                profileIcon,
+                color: _selectedIndex == 3 ? Colors.black : Colors.grey,
+              ),
               label: 'Profile'),
         ],
       ),

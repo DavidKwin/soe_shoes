@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../constants/my_style.dart';
 import '../../../../../models/product_model.dart';
 
 class CartItemWidget extends StatelessWidget {
@@ -76,9 +77,7 @@ class CartProductImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-          color: Color(0xFFEDEDED)),
+      decoration: greyBoxDecoration,
       child: Image.asset(product.image),
     );
   }

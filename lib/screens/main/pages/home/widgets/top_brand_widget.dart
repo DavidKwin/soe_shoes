@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../constants/my_style.dart';
 import '../../../../../data/data.dart';
 import '../../../../../models/brand_model.dart';
 
@@ -13,7 +14,10 @@ class TopBrandWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Top Brand"),
+          Text(
+            "Top Brand",
+            style: Theme.of(context).textTheme.subtitle1!,
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -27,9 +31,7 @@ class TopBrandWidget extends StatelessWidget {
               BrandModel brand = topBrands[index];
               return Container(
                 padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
-                    color: Color(0xFFEDEDED),
-                    borderRadius: BorderRadius.all(Radius.circular(16))),
+                decoration: greyBoxDecoration,
                 child: Center(
                   child: Image.asset(brand.image),
                 ),

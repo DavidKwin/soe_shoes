@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants/my_style.dart';
 import '../models/product_model.dart';
 
 class ProductImageWidget extends StatelessWidget {
@@ -13,9 +14,7 @@ class ProductImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          color: Color(0xFFEDEDED),
-          borderRadius: BorderRadius.all(Radius.circular(16))),
+      decoration: greyBoxDecoration,
       child: Stack(
         fit: StackFit.expand,
         children: [
