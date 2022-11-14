@@ -52,16 +52,16 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                         height: 120,
                         child: ProductImagesWidget(product: product),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Text(
                         product.title,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
-                        style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),
+                        style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4,
                       ),
                       Text("\$ ${product.price}")
